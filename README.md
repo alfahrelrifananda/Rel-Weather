@@ -8,7 +8,6 @@ A clean and modern weather app built with Java and XML layouts. Get real-time we
 - **Material 3 design** with dynamic color theming
 - **Clean UI** built with XML layouts
 - **Current conditions** including temperature, humidity, and weather descriptions
-- **Responsive design** that looks great on any device
 
 ## Screenshot
 <div style="display: flex; justify-content: space-around;">
