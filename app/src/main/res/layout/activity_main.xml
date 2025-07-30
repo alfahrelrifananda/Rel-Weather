@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@null"
+        android:scrollbarThumbHorizontal="@null"
+        android:paddingBottom="72dp"
+        android:clipToPadding="false">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/language_icon"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="32dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:src="@drawable/ic_outline_language_24"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:padding="4dp"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:contentDescription="Settings"-->
+<!--                app:tint="?attr/colorOnSurface" />-->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/welcome_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/transparent"
+                app:cardBackgroundColor="?attr/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="32dp">
+
+                    <ImageView
+                        android:id="@+id/weatherIcon"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginBottom="12dp"
+                        app:tint="?attr/colorOnSurface" />
+
+                    <TextView
+                        android:id="@+id/temperatureText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---"
+                        android:textAppearance="?attr/textAppearanceDisplayMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/cityNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-----, --"
+                        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/descriptionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---- ----"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnSurface" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                app:strokeColor="@color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/dateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="----, -- ----, ----"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textFontWeight="600"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/feelsLikeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--- --- ----"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/humidity_wind_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                app:cardCornerRadius="32dp"
+                android:stateListAnimator="@animator/card_pressed_animation"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:strokeColor="@color/transparent"
+                app:rippleColor="?attr/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="?attr/colorSecondaryContainer"
+                            app:strokeColor="@color/transparent">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_outline_humidity_mid_24"
+                                app:tint="?attr/colorOnSurface" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/humidity"
+                                android:textAppearance="?attr/textAppearanceLabelLarge"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textFontWeight="600" />
+
+                            <TextView
+                                android:id="@+id/humidityText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="---"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textFontWeight="300" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:cardBackgroundColor="?attr/colorTertiaryContainer"
+                            app:strokeColor="@color/transparent">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_outline_wind_power_24"
+                                app:tint="?attr/colorOnSurface" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/wind_speed"
+                                android:textAppearance="?attr/textAppearanceLabelLarge"
+                                android:textColor="?attr/colorOnSurface"
+                                android:textFontWeight="600" />
+
+                            <TextView
+                                android:id="@+id/windSpeedText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="----"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:textColor="?attr/colorOnSurfaceVariant"
+                                android:textFontWeight="300" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pressure_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:stateListAnimator="@animator/card_pressed_animation"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardElevation="0dp"
+                app:shapeAppearanceOverlay="@style/TopCornersCardShape"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:strokeColor="@color/transparent"
+                app:rippleColor="?attr/colorPrimary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pressure_icon_card"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="?attr/colorErrorContainer"
+                        app:strokeColor="@color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_outline_compress_24"
+                            app:tint="?attr/colorOnSurface" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/pressure_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/pressure"
+                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintEnd_toStartOf="@+id/pressure_value"
+                        app:layout_constraintStart_toEndOf="@+id/pressure_icon_card"
+                        app:layout_constraintTop_toTopOf="@+id/pressure_icon_card" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/atmospheric_pressure"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textFontWeight="300"
+                        app:layout_constraintEnd_toStartOf="@+id/pressure_value"
+                        app:layout_constraintStart_toEndOf="@+id/pressure_icon_card"
+                        app:layout_constraintTop_toBottomOf="@+id/pressure_title" />
+
+                    <TextView
+                        android:id="@+id/pressure_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---- --"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintBottom_toBottomOf="@+id/pressure_icon_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/pressure_icon_card" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/visibility_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:stateListAnimator="@animator/card_pressed_animation"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:strokeColor="@color/transparent"
+                app:rippleColor="?attr/colorPrimary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/visibility_icon_card"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="?attr/colorSurfaceDim"
+                        app:strokeColor="@color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_outline_visibility_24"
+                            app:tint="?attr/colorOnSurface" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/visibility_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/visibility"
+                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintEnd_toStartOf="@+id/visibility_value"
+                        app:layout_constraintStart_toEndOf="@+id/visibility_icon_card"
+                        app:layout_constraintTop_toTopOf="@+id/visibility_icon_card" />
+
+                    <TextView
+                        android:id="@+id/visibility_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/how_far_you_can_see"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textFontWeight="300"
+                        app:layout_constraintEnd_toStartOf="@+id/visibility_value"
+                        app:layout_constraintStart_toEndOf="@+id/visibility_icon_card"
+                        app:layout_constraintTop_toBottomOf="@+id/visibility_title" />
+
+                    <TextView
+                        android:id="@+id/visibility_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="---- ---"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintBottom_toBottomOf="@+id/visibility_icon_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/visibility_icon_card" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uv_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="48dp"
+                android:layout_marginLeft="16dp"
+                android:stateListAnimator="@animator/card_pressed_animation"
+                android:clickable="true"
+                android:focusable="true"
+                app:shapeAppearanceOverlay="@style/BottomCornerCardShape"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+                app:strokeColor="@color/transparent"
+                app:rippleColor="?attr/colorPrimary">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uv_icon_card"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="?attr/colorPrimaryContainer"
+                        app:strokeColor="@color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_outline_sunny_24"
+                            app:tint="?attr/colorOnSurface" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/uv_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/uv_index"
+                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintEnd_toStartOf="@+id/uv_value"
+                        app:layout_constraintStart_toEndOf="@+id/uv_icon_card"
+                        app:layout_constraintTop_toTopOf="@+id/uv_icon_card" />
+
+                    <TextView
+                        android:id="@+id/uv_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/sun_exposure_level"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textFontWeight="300"
+                        app:layout_constraintEnd_toStartOf="@+id/uv_value"
+                        app:layout_constraintStart_toEndOf="@+id/uv_icon_card"
+                        app:layout_constraintTop_toBottomOf="@+id/uv_title" />
+
+                    <TextView
+                        android:id="@+id/uv_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="- ----"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textFontWeight="600"
+                        app:layout_constraintBottom_toBottomOf="@+id/uv_icon_card"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/uv_icon_card" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/search_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:stateListAnimator="@animator/card_pressed_animation"
+        android:visibility="gone"
+        app:cardCornerRadius="32dp"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+        app:strokeColor="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/search_back_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:contentDescription="Back"
+                app:tint="?attr/colorOnSurface" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="8dp"
+                android:background="@null"
+                android:hint="@string/search_for_a_city"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurfaceVariant"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:padding="12dp" />
+
+            <ImageButton
+                android:id="@+id/search_clear_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_clear_24"
+                android:contentDescription="Clear"
+                android:visibility="gone"
+                app:tint="?attr/colorOnSurface" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/set_default_city_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="112dp"
+        android:src="@drawable/ic_outline_location_on_24"
+        android:stateListAnimator="@animator/card_pressed_animation"
+        app:tint="?attr/colorOnSecondary"
+        app:backgroundTint="?attr/colorSecondary"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_search_24"
+        android:stateListAnimator="@animator/card_pressed_animation"
+        app:tint="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary"
+        app:fabCustomSize="80dp"
+        app:maxImageSize="40dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

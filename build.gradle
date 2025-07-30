@@ -1,0 +1,18 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(libs.plugins.android.application) apply false
+}
+
+// Load API keys
+def getApiKey() {
+    def propFile = rootProject.file('./apikeys.properties')
+    if (propFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propFile))
+        return props['API_KEY']
+    }
+    return "default_key"
+}
+
+// Make API key available to all subprojects
+ext.API_KEY = getApiKey()

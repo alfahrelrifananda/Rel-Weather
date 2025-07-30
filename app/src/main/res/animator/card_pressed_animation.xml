@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <set android:ordering="together">
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="120"
+                android:valueTo="0.95"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="120"
+                android:valueTo="0.95"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+
+
+            <objectAnimator
+                android:propertyName="cardCornerRadius"
+                android:duration="120"
+                android:valueTo="40dp"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+        </set>
+    </item>
+
+    <item>
+        <set android:ordering="together">
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="180"
+                android:valueTo="1.0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+
+            <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="180"
+                android:valueTo="1.0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+
+            <objectAnimator
+                android:propertyName="translationZ"
+                android:duration="180"
+                android:valueTo="0dp"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+
+            <objectAnimator
+                android:propertyName="cardCornerRadius"
+                android:duration="180"
+                android:valueTo="32dp"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in" />
+        </set>
+    </item>
+
+</selector>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name -->
+    <string name="app_name">Rel Weather</string>
+
+    <!-- Date format -->
+    <string name="date_format">EEEE, dd MMMM yyyy</string>
+    <string name="time_format">HH:mm</string>
+
+    <!-- Temperature format -->
+    <string name="temperature_celsius">%d°C</string>
+    <string name="feels_like_temperature">Terasa seperti %d°C</string>
+
+    <!-- Weather units -->
+    <string name="humidity_percentage">%d%%</string>
+    <string name="wind_speed_ms">%.1f m/s</string>
+    <string name="pressure_hpa">%d hPa</string>
+    <string name="visibility_km">%.1f km</string>
+    <string name="cloudiness_percentage">%d%%</string>
+    <string name="wind_direction_degrees">%s (%d°)</string>
+
+    <!-- Search functionality -->
+    <string name="searching_for">Mencari %s…</string>
+
+    <!-- Toast messages -->
+    <string name="weather_data_not_available">Data cuaca tidak tersedia</string>
+    <string name="city_not_found">Kota tidak ditemukan</string>
+    <string name="error_parsing_weather_data">Error mengurai data cuaca</string>
+    <string name="error_fetching_weather_data">Error mengambil data cuaca. Periksa koneksi internet Anda.</string>
+    <string name="error_loading_weather_details">Error memuat detail cuaca</string>
+
+    <!-- City display format -->
+    <string name="city_country_format">%s, %s</string>
+
+    <!-- Wind directions -->
+    <string name="wind_direction_n">U</string>
+    <string name="wind_direction_nne">UUB</string>
+    <string name="wind_direction_ne">UB</string>
+    <string name="wind_direction_ene">BUB</string>
+    <string name="wind_direction_e">B</string>
+    <string name="wind_direction_ese">BTB</string>
+    <string name="wind_direction_se">TB</string>
+    <string name="wind_direction_sse">TTB</string>
+    <string name="wind_direction_s">T</string>
+    <string name="wind_direction_ssw">TTD</string>
+    <string name="wind_direction_sw">TD</string>
+    <string name="wind_direction_wsw">DTD</string>
+    <string name="wind_direction_w">B</string>
+    <string name="wind_direction_wnw">BUB</string>
+    <string name="wind_direction_nw">UB</string>
+    <string name="wind_direction_nnw">UUB</string>
+
+    <!-- UV Index levels -->
+    <string name="uv_index_high">7 Tinggi</string>
+    <string name="uv_index_moderate_4">4 Sedang</string>
+    <string name="uv_index_low_2">2 Rendah</string>
+    <string name="uv_index_moderate_3">3 Sedang</string>
+    <string name="uv_index_low_1">1 Rendah</string>
+    <string name="uv_index_moderate_5">5 Sedang</string>
+
+    <!-- Weather conditions (for icon mapping) -->
+    <string name="weather_clear">cerah</string>
+    <string name="weather_clouds">berawan</string>
+    <string name="weather_rain">hujan</string>
+    <string name="weather_snow">salju</string>
+    <string name="weather_thunderstorm">badai petir</string>
+    <string name="weather_drizzle">gerimis</string>
+    <string name="weather_mist">kabut tipis</string>
+    <string name="weather_fog">kabut</string>
+    <string name="weather_haze">kabut asap</string>
+
+    <!-- API configuration -->
+    <string name="api_base_url">https://api.openweathermap.org/data/2.5/weather?q=</string>
+    <string name="api_units_param">&amp;units=metric</string>
+    <string name="api_key_param">&amp;appid=</string>
+
+    <!-- Content descriptions for accessibility -->
+    <string name="weather_icon_description">Ikon kondisi cuaca</string>
+    <string name="search_button_description">Cari cuaca</string>
+    <string name="back_button_description">Kembali</string>
+    <string name="clear_search_description">Hapus teks pencarian</string>
+
+    <!-- Fallback values -->
+    <string name="not_available">Tidak tersedia</string>
+    <string name="default_cloudiness">0%</string>
+    <string name="humidity">Lembab</string>
+    <string name="wind_speed">Kec Angin</string>
+    <string name="pressure">Tekanan</string>
+    <string name="atmospheric_pressure">Tekanan atmosfer</string>
+    <string name="visibility">Jarak Pandang</string>
+    <string name="how_far_you_can_see">Seberapa jauh Anda dapat melihat</string>
+    <string name="uv_index">Indeks UV</string>
+    <string name="sun_exposure_level">Tingkat paparan sinar matahari</string>
+
+    <!-- Bottom Sheet Weather Details -->
+    <string name="default_city_placeholder">---, -----</string>
+    <string name="default_temperature_placeholder">----</string>
+    <string name="default_description_placeholder">-----</string>
+    <string name="default_feels_like_placeholder">-----</string>
+    <string name="temperature_min_label">Min</string>
+    <string name="temperature_max_label">Maks</string>
+    <string name="wind_direction_label">Arah</string>
+    <string name="cloudiness_label">Tutupan Awan</string>
+    <string name="cloudiness_description">Persentase tutupan awan</string>
+    <string name="sun_information_title">Informasi Matahari</string>
+    <string name="sunrise_label">Matahari Terbit</string>
+    <string name="sunset_label">Matahari Terbenam</string>
+    <string name="default_value_placeholder">----</string>
+
+    <!-- New Features - Settings and Language -->
+    <string name="settings">Pengaturan</string>
+    <string name="change_language">Ubah Bahasa</string>
+    <string name="set_default_city">Atur Kota Default</string>
+    <string name="select_language">Pilih Bahasa</string>
+    <string name="language_changed_restart">Bahasa diubah. Restart aplikasi untuk menerapkan perubahan.</string>
+    <string name="restart_now">Restart Sekarang</string>
+    <string name="cancel">Batal</string>
+    <string name="save">Simpan</string>
+    <string name="enter_city_name">Masukkan nama kota</string>
+
+    <!-- City Options -->
+    <string name="city_options">Opsi Kota</string>
+    <string name="mark_as_default_city">Tandai sebagai Kota Default</string>
+    <string name="default_city_set">%1$s ditetapkan sebagai kota default</string>
+    <string name="no_city_loaded">Tidak ada kota yang dimuat</string>
+
+    <!-- Content Descriptions for Accessibility -->
+    <string name="weather_icon">Ikon cuaca</string>
+    <string name="search_button">Cari</string>
+    <string name="back_button">Kembali</string>
+    <string name="clear_button">Hapus</string>
+    <string name="settings_button">Pengaturan</string>
+    <string name="search_for_a_city" translatable="false">Cari Kota...</string>
+    <string name="tutup">Tutup</string>
+</resources>
