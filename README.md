@@ -17,7 +17,6 @@ A clean and modern weather app built with Java and XML layouts. Get real-time we
   <img src="./Screenshot/ss3.jpg" alt="Settings" width="200">
 </div>
 
-
 ## Tech Stack
 
 - **Language:** Java
@@ -37,7 +36,7 @@ https://github.com/alfahrelrifananda/Rel-Weather.git
 
 3. Add your API key to `apikeys.properties`:
 ```
-WEATHER_API_KEY=your_api_key_here
+API_KEY=your_api_key_here
 ```
 
 4. Build and run the app!
