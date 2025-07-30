@@ -11,9 +11,11 @@ A clean and modern weather app built with Java and XML layouts. Get real-time we
 - **Responsive design** that looks great on any device
 
 ## Screenshot
-![App Home Screen](./Screenshot/ss1.jpg)
-![Weather Details](./Screenshot/ss2.jpg)
-![Search Page](./Screenshot/ss3.jpg)
+<div style="display: flex; justify-content: space-around;">
+  <img src="./Screenshot/ss1.jpg" alt="Home Screen" width="200">
+  <img src="./Screenshot/ss2.jpg" alt="Weather Details" width="200">
+  <img src="./Screenshot/ss3.jpg" alt="Settings" width="200">
+</div>
 
 
 ## Tech Stack
