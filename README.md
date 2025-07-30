@@ -1,4 +1,4 @@
-# Rel Weather ☀️
+# Rel Weather
 
 A clean and modern weather app built with Java and XML layouts. Get real-time weather updates with a beautiful Material 3 design that adapts to your device's dynamic colors.
 
@@ -9,11 +9,6 @@ A clean and modern weather app built with Java and XML layouts. Get real-time we
 - **Clean UI** built with XML layouts
 - **Current conditions** including temperature, humidity, and weather descriptions
 - **Responsive design** that looks great on any device
-
-## Screenshots
-
-<!-- Add your screenshots here -->
-*Coming soon...*
 
 ## Tech Stack
 
@@ -27,7 +22,7 @@ A clean and modern weather app built with Java and XML layouts. Get real-time we
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/rel-weather.git
+https://github.com/alfahrelrifananda/Rel-Weather.git
 ```
 
 2. Get your API key from [OpenWeatherMap](https://openweathermap.org/api)
@@ -42,13 +37,9 @@ WEATHER_API_KEY=your_api_key_here
 ## Requirements
 
 - Android Studio
-- Minimum SDK: API 21 (Android 5.0)
+- Minimum SDK: API 24 (Android 7.0)
 - Target SDK: API 34
 
 ## Contributing
 
 Feel free to open issues or submit pull requests. All contributions are welcome!
-
-## License
-
-This project is open source and available under the MIT License.
